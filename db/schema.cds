@@ -6,6 +6,8 @@ entity Suppliers as projection on bupa.A_BusinessPartner {
     BusinessPartnerFullName as fullName,
     BusinessPartnerIsBlocked as isBlocked,
     to_BusinessPartnerAddress as addresses,
+    Supplier as supplierID,
+    to_Supplier as supplier
 }
 
 entity SupplierAddresses as projection on bupa.A_BusinessPartnerAddress {
@@ -28,3 +30,18 @@ entity PhoneNumber as projection on bupa.A_AddressPhoneNumber {
     PhoneNumber as phone
 }
 
+entity Supplier as projection on bupa.A_Supplier {
+    Supplier as ID,
+    to_SupplierCompany as companies,
+    to_SupplierPurchasingOrg as purchasingOrgs,
+}
+
+entity SupplierCompany as projection on bupa.A_SupplierCompany {
+    Supplier as supplierID,
+    CompanyCode as companyCode,
+}
+
+entity SupplierPurchasingOrg as projection on bupa.A_SupplierPurchasingOrg {
+    Supplier as supplierID,
+    PurchasingOrganization as ID
+}

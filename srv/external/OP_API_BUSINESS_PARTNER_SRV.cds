@@ -1755,7 +1755,7 @@ entity OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartner {
   @cds.ambiguous : 'missing on condition?'
   to_PaymentCard : Association to many OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerPaymentCard {  };
   @cds.ambiguous : 'missing on condition?'
-  to_Supplier : Association to OP_API_BUSINESS_PARTNER_SRV.A_Supplier {  };
+  to_Supplier : Composition of OP_API_BUSINESS_PARTNER_SRV.A_Supplier on to_Supplier.Supplier = Supplier;
 };
 
 @cds.external : true
@@ -3688,9 +3688,9 @@ entity OP_API_BUSINESS_PARTNER_SRV.A_Supplier {
   @sap.quickinfo : 'Instruction Key for Data Medium Exchange'
   DataExchangeInstructionKey : String(2);
   @cds.ambiguous : 'missing on condition?'
-  to_SupplierCompany : Association to many OP_API_BUSINESS_PARTNER_SRV.A_SupplierCompany {  };
+  to_SupplierCompany : Composition of many OP_API_BUSINESS_PARTNER_SRV.A_SupplierCompany on to_SupplierCompany.Supplier = Supplier;
   @cds.ambiguous : 'missing on condition?'
-  to_SupplierPurchasingOrg : Association to many OP_API_BUSINESS_PARTNER_SRV.A_SupplierPurchasingOrg {  };
+  to_SupplierPurchasingOrg : Composition of many OP_API_BUSINESS_PARTNER_SRV.A_SupplierPurchasingOrg on to_SupplierPurchasingOrg.Supplier = Supplier;
   @cds.ambiguous : 'missing on condition?'
   to_SupplierText : Association to many OP_API_BUSINESS_PARTNER_SRV.A_SupplierText {  };
 };
