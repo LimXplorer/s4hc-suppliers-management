@@ -1733,7 +1733,7 @@ entity OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartner {
   @cds.ambiguous : 'missing on condition?'
   to_BusinessPartner : Association to OP_API_BUSINESS_PARTNER_SRV.A_BPFinancialServicesExtn {  };
   @cds.ambiguous : 'missing on condition?'
-  to_BusinessPartnerAddress : Association to many OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerAddress {  };
+  to_BusinessPartnerAddress : Composition of many OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerAddress on to_BusinessPartnerAddress.BusinessPartner = BusinessPartner;
   @cds.ambiguous : 'missing on condition?'
   to_BusinessPartnerAlias : Association to many OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerAlias {  };
   @cds.ambiguous : 'missing on condition?'
@@ -1916,13 +1916,13 @@ entity OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerAddress {
   @cds.ambiguous : 'missing on condition?'
   to_BPIntlAddressVersion : Association to many OP_API_BUSINESS_PARTNER_SRV.A_BPIntlAddressVersion {  };
   @cds.ambiguous : 'missing on condition?'
-  to_EmailAddress : Association to many OP_API_BUSINESS_PARTNER_SRV.A_AddressEmailAddress {  };
+  to_EmailAddress : Composition of many OP_API_BUSINESS_PARTNER_SRV.A_AddressEmailAddress on to_EmailAddress.AddressID = AddressID;
   @cds.ambiguous : 'missing on condition?'
   to_FaxNumber : Association to many OP_API_BUSINESS_PARTNER_SRV.A_AddressFaxNumber {  };
   @cds.ambiguous : 'missing on condition?'
   to_MobilePhoneNumber : Association to many OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber {  };
   @cds.ambiguous : 'missing on condition?'
-  to_PhoneNumber : Association to many OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber {  };
+  to_PhoneNumber : Composition of many OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber on to_PhoneNumber.AddressID = AddressID;
   @cds.ambiguous : 'missing on condition?'
   to_URLAddress : Association to many OP_API_BUSINESS_PARTNER_SRV.A_AddressHomePageURL {  };
 };
