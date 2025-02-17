@@ -983,7 +983,7 @@ entity OP_API_SUPPLIERINVOICE_PROCESS_SRV.A_SupplierInvoice {
   @cds.ambiguous : 'missing on condition?'
   to_SuplrInvcItemMaterial : Association to many OP_API_SUPPLIERINVOICE_PROCESS_SRV.A_SupplierInvoiceItemMaterial {  };
   @cds.ambiguous : 'missing on condition?'
-  to_SuplrInvcItemPurOrdRef : Association to many OP_API_SUPPLIERINVOICE_PROCESS_SRV.A_SuplrInvcItemPurOrdRef {  };
+  to_SuplrInvcItemPurOrdRef : Association to many OP_API_SUPPLIERINVOICE_PROCESS_SRV.A_SuplrInvcItemPurOrdRef on to_SuplrInvcItemPurOrdRef.SupplierInvoice = SupplierInvoice;
   @cds.ambiguous : 'missing on condition?'
   to_SuplrInvoiceAdditionalData : Association to OP_API_SUPPLIERINVOICE_PROCESS_SRV.A_SuplrInvoiceAdditionalData {  };
   @cds.ambiguous : 'missing on condition?'

@@ -27,3 +27,9 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 ## Command 
 - Add additional libraries to the **package.json** file for the communication with external systems: `npm add @sap-cloud-sdk/http-client@3.x @sap-cloud-sdk/util@3.x @sap-cloud-sdk/connectivity@3.x @sap-cloud-sdk/resilience@3.x`
 - Upload an edmx file to the project's root and import it: `cds import OP_API_BUSINESS_PARTNER_SRV.edmx --as cds`
+
+## Q&A
+
+**Q:** What should I do if I fail to upload edmx file?
+
+**A:** Open vscode settings and edit, search **editor.maxTokenizationLineLength**, and change the **Max Tokenization Line Length**.
